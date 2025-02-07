@@ -1,0 +1,5 @@
+---
+title: newPost
+---
+
+post details
