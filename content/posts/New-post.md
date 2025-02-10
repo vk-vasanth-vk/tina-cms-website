@@ -1,5 +1,5 @@
 ---
-title: newPost
+title: New post
 ---
 
 post details

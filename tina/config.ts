@@ -36,8 +36,13 @@ export default defineConfig({
         fields: [
           {
             name: 'subtitle',
-            label: 'Subtitle',
+            label: 'Title',
             type: 'string',
+          },
+          {
+            type: "string",
+            name: "body",
+            label: "Body"
           }
         ]
       },
@@ -62,7 +67,7 @@ export default defineConfig({
         ],
         ui: {
           // This is an DEMO router. You can remove this to fit your site
-          router: ({ document }) => `/demo/blog/${document._sys.filename}`,
+          // router: ({ document }) => `/demo/blog/${document._sys.filename}`,
         },
       },
     ],

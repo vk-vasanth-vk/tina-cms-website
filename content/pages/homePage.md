@@ -1,3 +1,0 @@
-{
-  "subtitle": "Test editing"
-}

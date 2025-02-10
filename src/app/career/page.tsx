@@ -27,13 +27,13 @@ export default async function Career() {
         <h1>Career Page</h1>
       </div>
       <ul>
-        {fullPages.map((page) => (
+        {/* {fullPages.map((page) => (
           <li key={page.filename} className="border-b p-4">
             <Link href={`/pages/${page.filename}`}>
               <h2 className="text-xl font-bold">{page.filename}</h2>
             </Link>
           </li>
-        ))}
+        ))} */}
       </ul>
     </div>
   );

@@ -20,9 +20,6 @@ export default async function Blog() {
               <Link href={`/blog/${post?.node?._sys.filename}`}>
                 <h2 className="text-xl font-bold">{postData.data.post.title}</h2>
               </Link>
-              {/* <p className="text-sm text-gray-400">
-              </p>
-              <div dangerouslySetInnerHTML={{ __html: postData.data.post.body }} /> */}
             </li>
           );
         })}

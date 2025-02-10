@@ -1,12 +1,10 @@
-import { HomePage } from "../../components/homePage";
-import client from "../../tina/__generated__/client";
 import Link from 'next/link';
+import { client } from "../../tina/__generated__/client";
 
 export default async function Home() {
-  // const res = await client.queries.pages({ relativePath: "homePage.json" });
-  // return <HomePage data={res.data} query={res.query} variables={res.variables} />;
+  const pagesData = await client.queries.pagesConnection();
 
-  return(
+  return (
     <>
       <div className="h-20 w-full border flex items-center justify-end">
         <ul className="flex flex-row space-x-14 mr-[90px]">
@@ -16,6 +14,14 @@ export default async function Home() {
           <li>
             <Link href="/career">Career</Link>
           </li>
+          {/* ✅ Fix: Wrap each Link inside its own <li> */}
+          {pagesData.data?.pagesConnection?.edges?.map((edge) => (
+            edge?.node && (
+              <li key={edge.node._sys.filename}>
+                <Link href={`/pages/${edge.node._sys.filename}`}>{edge.node.subtitle}</Link>
+              </li>
+            )
+          ))}
           <li>
             <Link href="/admin/index.html">Admin</Link>
           </li>
@@ -25,5 +31,5 @@ export default async function Home() {
         <h1>Home Page</h1>
       </div>
     </>
-  )
+  );
 }
